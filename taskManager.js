@@ -10,6 +10,9 @@ class TaskManager {
     deleteTask(taskId) {
       this.tasks = this.tasks.filter(task => task.id !== taskId);
     }
+    getAllTask(){
+      return this.task;
+    }
   
 
   
@@ -17,6 +20,12 @@ class TaskManager {
       return this.tasks.find(task => task.id === taskId);
     }
   
+    prioritizeTask(taskId) {
+      const task = this.getTaskById(taskId);
+      if (task) {
+        task.priority = true;
+      }
+    }
     updateTaskStatus(taskId, status) {
       const task = this.getTaskById(taskId);
       if (task) {

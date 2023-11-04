@@ -62,10 +62,29 @@ function deleteTask() {
 }
 
 // Function to prioritize a task
-
+function prioritizeTask() {
+  rl.question(chalk.cyan('Enter task ID: '), taskId => {
+    taskManager.prioritizeTask(parseInt(taskId));
+    console.log(chalk.green('Task prioritized successfully!'));
+    displayMenu();
+    processInput();
+  });
+}
 
 // Function to view all tasks
-  
+function viewAllTasks() {
+  const tasks = taskManager.getAllTasks();
+  console.log(chalk.bold.yellow('All Tasks:'));
+  tasks.forEach(task => {
+    console.log(chalk.cyan('ID: ' + task.id));
+    console.log(chalk.cyan('Title: ' + task.title));
+    console.log(chalk.cyan('Description: ' + task.description));
+    console.log(chalk.cyan('Status: ' + task.status));
+    console.log(chalk.yellow('------------------------'));
+  });
+  displayMenu();
+  processInput();
+}
 
 // Function to process user input and make menu choices
 function processInput() {
@@ -80,8 +99,13 @@ function processInput() {
       case '3':
         deleteTask();
         break;
-    
       case '4':
+        prioritizeTask();
+        break;
+      case '5':
+        viewAllTask();
+        break;
+      case '6':
         rl.close();
         break;
       default:
