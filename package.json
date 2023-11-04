@@ -1,0 +1,30 @@
+{
+  "name": "task_management",
+  "version": "1.0.0",
+  "description": "task manager app using javascript(ES6)",
+  "main": "App.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Musfira89/Task_manager_app.git"
+  },
+  "keywords": [
+    "Add",
+    "Create",
+    "Delete",
+    "View",
+    "Update"
+  ],
+  "author": "Musfira , Fizza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Musfira89/Task_manager_app/issues"
+  },
+  "homepage": "https://github.com/Musfira89/Task_manager_app#readme",
+  "devDependencies": {
+    "chalk": "^5.3.0"
+  }
+}
